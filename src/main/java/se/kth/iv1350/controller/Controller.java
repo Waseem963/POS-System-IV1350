@@ -89,7 +89,7 @@ public class Controller {
    * @throws InventoryDatabaseException if the database cannot be called.
    * @throws IllegalArgumentException   if quantity is not positive.
    */
-  public ItemDTO scanItem(int itemID, int quantity) throws ItemNotFoundException {
+  public ItemDTO scanItem(int itemID, int quantity) throws ItemNotFoundException, InventoryDatabaseException, IllegalArgumentException {
     ItemDTO item = invSys.getItem(itemID);
     if (quantity <= 0)
       throw new IllegalArgumentException("Quantity must be greater than zero.");
